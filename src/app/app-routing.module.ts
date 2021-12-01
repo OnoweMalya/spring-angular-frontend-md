@@ -1,17 +1,16 @@
+import { Categoria } from './components/views/categoria/categoria.model';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
 import { HomeComponent } from './components/views/home/home.component';
+import { CategoriaComponent } from './components/views/categoria/categoria.component';
 
 const routes: Routes = [
   {
-    path:"",
-    component:HomeComponent
+    path: "",
+    component: HomeComponent
   },
-  {
-    path:"categorias",
-    component:CategoriaReadComponent
-  }
+  { path: "categorias",
+  loadChildren: () => import('./components/views/categoria/categoria.module').then(m => m.CategoriaModule) }
 
 ];
 

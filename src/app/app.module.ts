@@ -10,16 +10,8 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './components/views/home/home.component';
-import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
 
-
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { MatTableModule } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
+import { AppMaterialModule } from './shared/app-material/app-material.module'
 
 @NgModule({
   declarations: [
@@ -28,20 +20,13 @@ import { MatButtonModule } from '@angular/material/button';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    CategoriaReadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    MatCardModule,
-    MatTableModule,
-    MatButtonModule
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
