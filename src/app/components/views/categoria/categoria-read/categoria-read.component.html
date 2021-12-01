@@ -1,0 +1,57 @@
+<div class="content">
+  <div class="title">
+    <h1>Categoria</h1>
+  </div>
+  <div class="mat-elevation-z8 content-table" >
+  <table mat-table class="table" [dataSource]="categorias">
+
+    <!-- Coluna Id -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container>
+  
+    <!-- Coluna Nome -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> NOME </th>
+      <td mat-cell *matCellDef="let row"> {{row.nome}} </td>
+    </ng-container>
+  
+    <!-- Coluna Descrição -->
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef> DESCRIÇÃO </th>
+      <td mat-cell *matCellDef="let row"> {{row.descricao}} </td>
+    </ng-container>
+  
+    <!-- Coluna Ações -->
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
+      <td mat-cell *matCellDef="let row">  </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>
+
+  
+</div>
+
+<style>
+  .content {
+    width: 90%;
+    margin: 1.4rem auto auto auto;
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .title h1 {
+    font-size: 2rem;
+    color: black;
+  }
+
+  .table {
+  width: 100%;
+}
+</style>

@@ -1,0 +1,29 @@
+<mat-sidenav-container class="container " >
+    <mat-sidenav mode="side" align="start" opened>
+        <mat-nav-list>
+            <a mat-list-item routerLink="">
+                <i class="material-icons" >home</i> HOME
+            </a>
+            <a mat-list-item routerLink="categorias">
+                <i class="material-icons">menu_book</i> CATEGORIAS
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <!-- Body -->
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>
+
+
+<style>
+
+.container{
+    height: 85%;
+}
+
+i{
+    padding-right: 1rem;
+}
+</style>
