@@ -8,6 +8,7 @@ import { CategoriaComponent } from './categoria.component';
 import { CategoriaReadComponent } from './categoria-read/categoria-read.component';
 import { CategoriaCreateComponent } from './categoria-create/categoria-create.component';
 import { AppMaterialModule } from 'src/app/shared/app-material/app-material.module';
+import { CategoriaDeleteComponent } from './categoria-delete/categoria-delete.component';
 
 
 
@@ -16,7 +17,8 @@ import { AppMaterialModule } from 'src/app/shared/app-material/app-material.modu
   declarations: [
     CategoriaComponent,
     CategoriaReadComponent,
-    CategoriaCreateComponent
+    CategoriaCreateComponent,
+    CategoriaDeleteComponent
   ],
   imports: [
     CommonModule,

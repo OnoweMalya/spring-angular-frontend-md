@@ -1,0 +1,65 @@
+
+
+
+<div>
+    <mat-toolbar class="header" color="primary">
+    <span><h1>DELETAR CATEGORIA</h1></span>
+    </mat-toolbar>
+    <form action="">
+        <mat-form-field appearance="fill" class="form">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Ex. Computação" name="nome" type="text" disabled [(ngModel)]="categoria.nome">
+            <mat-icon matSuffix>sentiment_very_dissatisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput placeholder="Ex. Livro de Computação" name="descricao" type="text" disabled [(ngModel)]="categoria.descricao"></textarea>
+            <mat-icon matSuffix>sentiment_very_dissatisfied</mat-icon>
+        </mat-form-field>
+    </form>
+    <div class="buttons">
+        <button mat-raised-button color="warn" (click)="delete()">
+            <i class="material-icons">remove_circle</i>
+            DELETAR
+        </button>
+        <button mat-raised-button color="primary" (click)="cancel()">
+            CANCELAR
+        </button>
+    </div>
+</div>
+
+
+
+<style>
+
+    .form-box{
+        border: 0.1rem solid;
+    }
+    form{
+        text-align: center;
+        width: 70%;
+        margin: 2rem auto 0 auto;
+    }
+
+    h1{
+        font-size: 2rem;
+        font-weight: 500;
+        margin-left: 1rem;
+    }
+    .buttons{
+        text-align: center;
+
+    }
+
+    .mat-raised-button {
+      margin: auto 1rem 1rem auto;
+    }
+    .material-icons{
+        margin: auto 0.5rem ;
+    }
+
+    
+  .form{
+    width: 100%;
+  }
+  </style>

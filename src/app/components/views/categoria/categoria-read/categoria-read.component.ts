@@ -10,9 +10,10 @@ import { CategoriaService } from '../categoria.service';
 export class CategoriaReadComponent implements OnInit {
 
   categorias: Categoria[] = [];
+  
   displayedColumns: string[] = ['id', 'nome', 'descricao', 'livros','acoes'];
 
-  constructor(private service: CategoriaService) { }
+  constructor(private service: CategoriaService) {   }
 
   ngOnInit(): void {
     this.findAll();
@@ -26,3 +27,9 @@ export class CategoriaReadComponent implements OnInit {
     }  
 
 }
+
+
+/**
+ * para fazzzer o carregamento do spinner
+ * D:\WorkSpace\Learning_Angular\Projects\crud-angular-spring\crud-angular\src\app\courses\courses
+ */

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Categoria } from './categoria.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +18,16 @@ export class CategoriaService {
 
   constructor(
     private http: HttpClient,
-    private _snakBar: MatSnackBar
+    private _snakBar: MatSnackBar,
+    private router: Router
     ) {}
 
   findAll(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(this.url);
+  }
+
+  findById(id: String): Observable<Categoria>{
+    return this.http.get<Categoria>(this.url+`/${id}`);
   }
 
   mensagem(str: string):void{
@@ -37,9 +43,14 @@ export class CategoriaService {
     return this.http.post<Categoria>(this.url, categoria);
   }
 
+  delete(id: String): Observable<void>{
+    return this.http.delete<void>(this.url+`/${id}`);
+  }
+
   update(categoria: Categoria): Observable<Categoria> {
     return this.http.put<Categoria>(this.url, categoria);
   }
 
+  
 
 }
