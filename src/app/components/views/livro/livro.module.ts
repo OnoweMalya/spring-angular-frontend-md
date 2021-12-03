@@ -9,6 +9,7 @@ import { LivroComponent } from './livro/livro.component';
 import { LivroCreateComponent } from './livro-create/livro-create.component';
 import { LivroUpdateComponent } from './livro-update/livro-update.component';
 import { LivroDeleteComponent } from './livro-delete/livro-delete.component';
+import { LivroReaderComponent } from './livro-reader/livro-reader.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LivroDeleteComponent } from './livro-delete/livro-delete.component';
     LivroComponent,
     LivroCreateComponent,
     LivroUpdateComponent,
-    LivroDeleteComponent
+    LivroDeleteComponent,
+    LivroReaderComponent
   ],
   imports: [
     CommonModule,

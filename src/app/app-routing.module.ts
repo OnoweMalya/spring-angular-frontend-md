@@ -13,6 +13,7 @@ import { CategoriaReadComponent } from './components/views/categoria/categoria-r
 import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
 import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
+import { LivroReaderComponent } from './components/views/livro/livro-reader/livro-reader.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
       { path:":id_cat/create", component:LivroCreateComponent },
       { path:":id_cat/update/:id", component:LivroUpdateComponent },
       { path:":id_cat/delete/:id", component:LivroDeleteComponent },
+      { path:":id_cat/reader/:id", component:LivroReaderComponent },
     ]
   
     //loadChildren: () => import('./components/views/livro/livro.module').then(m => m.LivroModule) 
