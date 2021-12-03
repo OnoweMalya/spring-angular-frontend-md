@@ -11,7 +11,10 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './components/views/home/home.component';
 
-import { AppMaterialModule } from './shared/app-material/app-material.module'
+import { AppMaterialModule } from './shared/app-material/app-material.module';
+import { LivroModule } from './components/views/livro/livro.module';
+import { CategoriaModule } from './components/views/categoria/categoria.module';
+import { LoginComponent } from './components/template/login/login.component'
 
 @NgModule({
   declarations: [
@@ -20,15 +23,21 @@ import { AppMaterialModule } from './shared/app-material/app-material.module'
     FooterComponent,
     NavComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppMaterialModule
+    AppMaterialModule,
+    CategoriaModule,
+    LivroModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    LoginComponent
+  ]
 })
 export class AppModule { }

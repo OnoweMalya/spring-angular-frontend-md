@@ -7,20 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./categoria.component.css']
 })
 export class CategoriaComponent implements OnInit {
-  
-  fistAccess: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.router.navigate(['categorias/read']);
   }
 
-  navegarParaCategoriaCreate(){
-    this.router.navigate(["categorias/create"]);
-  }
-
-  navegarParaCategoriaRead(){
-    this.router.navigate(["categorias/read"]);
-  }
-  
 }

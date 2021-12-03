@@ -1,0 +1,92 @@
+<div>
+  <mat-toolbar class="header" color="primary">
+    <span><h1>CRIANDO NOVO LIVRO</h1></span>
+  </mat-toolbar>
+  <form action="">
+    <mat-form-field appearance="fill" class="form">
+      <mat-label>Título</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Spring com Angular/CLI"
+        name="titulo"
+        type="text"
+        [(ngModel)]="livro.titulo"
+        maxlength="100"
+        [formControl]="titulo"
+        required
+      />
+      <mat-error *ngIf="titulo.invalid"> {{ getMessage() }} </mat-error>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form">
+      <mat-label>Nome do Autor</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Elton Junior"
+        name="nome_autor"
+        type="text"
+        [(ngModel)]="livro.nome_autor"
+        maxlength="100"
+        [formControl]="nome_autor"
+        required
+      />
+      <mat-error *ngIf="nome_autor.invalid">
+        {{ getMessage() }}
+      </mat-error>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form">
+      <mat-label>Texto</mat-label>
+      <textarea
+        matInput
+        placeholder="Ex. Lorem ispum"
+        name="texto"
+        type="text"
+        [(ngModel)]="livro.texto"
+        maxlength="100000"
+        [formControl]="texto"
+        required
+      ></textarea>
+      <mat-error *ngIf="texto.invalid"> {{ getMessage() }} </mat-error>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </form>
+  <div class="buttons">
+    <button mat-raised-button color="primary" (click)="create()" [disabled]="getMessage()">
+      <i class="material-icons">add_circle</i>
+      CRIAR
+    </button>
+    <button mat-raised-button color="warn" (click)="cancel()">CANCELAR</button>
+  </div>
+</div>
+
+<style>
+  .form-box {
+    border: 0.1rem solid;
+  }
+  form {
+    text-align: center;
+    width: 70%;
+    margin: 2rem auto 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 1rem;
+  }
+  .buttons {
+    text-align: center;
+  }
+
+  .mat-raised-button {
+    margin: auto 1rem 1rem auto;
+  }
+  .material-icons {
+    margin: auto 0.5rem;
+  }
+
+  .form {
+    width: 100%;
+  }
+</style>

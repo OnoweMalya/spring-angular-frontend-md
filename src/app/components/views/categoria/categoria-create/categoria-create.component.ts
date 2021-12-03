@@ -1,6 +1,6 @@
-import { Categoria } from './../categoria.model';
+import { Categoria } from '../shared/categoria.model';
 import { Component, OnInit } from '@angular/core';
-import { CategoriaService } from '../categoria.service';
+import { CategoriaService } from '../shared/categoria.service';
 import { Router } from '@angular/router';
 
 @Component({

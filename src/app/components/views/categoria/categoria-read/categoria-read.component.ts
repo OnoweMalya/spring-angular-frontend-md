@@ -1,6 +1,9 @@
-import { Categoria } from './../categoria.model';
+import { LivroService } from './../../livro/shared/livro.service';
+import { Categoria } from '../shared/categoria.model';
 import { Component, OnInit } from '@angular/core';
-import { CategoriaService } from '../categoria.service';
+import { CategoriaService } from '../shared/categoria.service';
+import { Router, RouterModule, ActivatedRoute, Routes } from '@angular/router';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @Component({
   selector: 'app-categoria-read',
@@ -13,18 +16,36 @@ export class CategoriaReadComponent implements OnInit {
   
   displayedColumns: string[] = ['id', 'nome', 'descricao', 'livros','acoes'];
 
-  constructor(private service: CategoriaService) {   }
+  constructor(
+    private service: CategoriaService, 
+    private router:Router, 
+    private activatedRoute: ActivatedRoute,
+    private livroService: LivroService) {   }
 
   ngOnInit(): void {
     this.findAll();
   }
 
   findAll(){
-    this.service.findAll().subscribe(resposta => {
+    this.service.findAll().subscribe(resposta => {   
       //console.log(resposta);
       this.categorias = resposta;
     });
     }  
+
+    goToBook(id: string):void{
+      //console.log("the ID is: " + id +" and the Router is: " +  this.router.createUrlTree(["livros/",id]) );
+
+      //this.router.navigate(["livros/",id]);
+      //this.router.navigateByUrl(this.router.createUrlTree(["livros/",id]));
+
+      this.livroService.goToLivro(id);
+    }
+
+    gotToCreateCategoria():void{
+      //console.log("create works!");
+    this.router.navigate(['../create'], {relativeTo: this.activatedRoute}); 
+    }
 
 }
 
@@ -32,4 +53,7 @@ export class CategoriaReadComponent implements OnInit {
 /**
  * para fazzzer o carregamento do spinner
  * D:\WorkSpace\Learning_Angular\Projects\crud-angular-spring\crud-angular\src\app\courses\courses
+ * 
+ * 
+ * relativeTo: this.activatedRoute
  */
